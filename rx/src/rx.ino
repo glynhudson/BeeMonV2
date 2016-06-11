@@ -142,7 +142,7 @@ if (readDataRF())
     Serial.print(variableD); Serial.print(" ");
     Serial.println(variableE);
 
-  delay(200);
+  delay(1000);
   digitalWrite(LED_PIN,LOW);
   } // end if RF
 
