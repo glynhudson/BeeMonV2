@@ -2,12 +2,13 @@
 Bee Monitor V2.0
 Glyn Hudson 28/03/2016
 --------------------------------------------------------------*/
+
 #include <Ports.h>
 ISR(WDT_vect) { Sleepy::watchdogEvent(); }
 
-#include <OneWire.h>
-#include <DallasTemperature.h>
 
+#include <DallasTemperature.h>
+#include <OneWire.h>
 #include <VirtualWire.h>             // library for RF RX/TX [VirtualWire 1.3] http://download.milesburton.com/Arduino/VirtualWire/VirtualWire.rar
 
 #define DEBUG

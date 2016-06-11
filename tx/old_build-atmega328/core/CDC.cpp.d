@@ -1,8 +1,6 @@
-build-atmega328/userlibs/DallasTemperature/DallasTemperature.cpp.o: \
- /home/glyn/Arduino/libraries/DallasTemperature/DallasTemperature.cpp \
- /home/glyn/Arduino/libraries/DallasTemperature/DallasTemperature.h \
- /home/glyn/Arduino/libraries/OneWire/OneWire.h \
- /home/glyn/Arduino/libraries/VirtualWire/util/crc16.h \
+build-atmega328/core/CDC.cpp.o: \
+ /usr/share/arduino/hardware/arduino//cores/arduino/CDC.cpp \
+ /usr/share/arduino/hardware/arduino//cores/arduino/Platform.h \
  /usr/share/arduino/hardware/arduino//cores/arduino/Arduino.h \
  /usr/share/arduino/hardware/arduino//cores/arduino/binary.h \
  /usr/share/arduino/hardware/arduino//cores/arduino/WCharacter.h \
@@ -12,4 +10,5 @@ build-atmega328/userlibs/DallasTemperature/DallasTemperature.cpp.o: \
  /usr/share/arduino/hardware/arduino//cores/arduino/Print.h \
  /usr/share/arduino/hardware/arduino//cores/arduino/Printable.h \
  /usr/share/arduino/hardware/arduino//cores/arduino/new.h \
- /usr/share/arduino/hardware/arduino//variants/standard/pins_arduino.h
+ /usr/share/arduino/hardware/arduino//variants/standard/pins_arduino.h \
+ /usr/share/arduino/hardware/arduino//cores/arduino/USBAPI.h

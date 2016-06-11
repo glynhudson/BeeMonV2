@@ -1,8 +1,5 @@
-build-atmega328/userlibs/DallasTemperature/DallasTemperature.cpp.o: \
- /home/glyn/Arduino/libraries/DallasTemperature/DallasTemperature.cpp \
- /home/glyn/Arduino/libraries/DallasTemperature/DallasTemperature.h \
- /home/glyn/Arduino/libraries/OneWire/OneWire.h \
- /home/glyn/Arduino/libraries/VirtualWire/util/crc16.h \
+build-atmega328/core/Stream.cpp.o: \
+ /usr/share/arduino/hardware/arduino//cores/arduino/Stream.cpp \
  /usr/share/arduino/hardware/arduino//cores/arduino/Arduino.h \
  /usr/share/arduino/hardware/arduino//cores/arduino/binary.h \
  /usr/share/arduino/hardware/arduino//cores/arduino/WCharacter.h \
