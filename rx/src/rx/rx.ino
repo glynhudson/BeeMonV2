@@ -15,7 +15,7 @@ GNU GPL V3
 int variableA, variableB, variableC, variableD, variableE;
 float a,e,k,m,u;
 
-char cArray[100];
+char cArray[30];
 int ic=0;
 
 const int nodeID=11;
@@ -43,38 +43,38 @@ int readDataRF()
          {
             variableA = atoi(cArray);      //String to float
          }
-         
+         delay(100);
          
          if (inByte=='e')
          {
             variableB = atoi(cArray);      //String to float
          }
-         
+         delay(100);
          
           if (inByte=='k')
          {
             variableC = atoi(cArray);      //String to float
          }
-         
+         delay(100);
          
           if (inByte=='m')
          {
             variableD = atoi(cArray);      //String to float
          }
+         delay(100);
          
-         
-          if (inByte=='u')
+            if (inByte=='u')
          {
             variableE = atoi(cArray);      //String to float
          }
-         
+         delay(100);
 
          //--------------------------------------------------
          
          //--------------------------------------------------
-         // if character a to z : reset arrays
+         // if character A to Z : reset arrays
          //--------------------------------------------------
-         if (inByte>96 && inByte<123)
+         if (inByte>64 && inByte<91)
          {
             ic=0;
             for(int i=0; i<10; i++) cArray[i] = 0;
