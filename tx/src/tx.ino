@@ -71,7 +71,7 @@ void setup(){
   pinMode(LEDpin, OUTPUT);
   digitalWrite(LEDpin,HIGH);
   
-  Serial.println("Bee Monitor V2 315Mhz");
+  Serial.println("Bee Monitor V2.5 11Jul16 315Mhz");
   Serial.println("openenergymonitor.org");
   
   sensors.begin();
