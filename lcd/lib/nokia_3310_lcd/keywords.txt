@@ -1,0 +1,46 @@
+#######################################
+# Syntax 
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Nokia_3310_LCD	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+writeCommand		KEYWORD2
+writeData		KEYWORD2
+write			KEYWORD2
+init			KEYWORD2
+clear			KEYWORD2
+gotoXY			KEYWORD2
+update			KEYWORD2
+writeString		KEYWORD2
+writeStringP		KEYWORD2
+writeStringBig		KEYWORD2
+writeCharBig		KEYWORD2
+writeChar		KEYWORD2
+drawBitmap		KEYWORD2
+drawBitmapP		KEYWORD2
+clearBitmap		KEYWORD2
+setPixel		KEYWORD2
+drawLine		KEYWORD2
+drawRectangle		KEYWORD2
+drawFilledRectangle	KEYWORD2
+drawCircle		KEYWORD2
+get_key			KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+MENU_NORMAL		LITERAL1
+MENU_HIGHLIGHT		LITERAL1
+PIXEL_OFF		LITERAL1
+PIXEL_ON		LITERAL1
+PIXEL_XOR		LITERAL1
+

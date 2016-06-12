@@ -1,0 +1,35 @@
+LCD library for noka 3110 display
+Date: 27 Oct 2009
+Author: A Lindsay
+Credits: based on original nuelectronics library extensively tidied up
+and with functions re-named and recoded.
+Additional graphics code added with options to disnable graphics if
+not required, see nokia_3110_lcd.h
+
+Updated: 10th November by John Crouchley
+1) Allow for multiple SPI devices by
+   a) allowing SPI_CS to reside on any port
+   b) set SPCR as part of LCDENABLE
+2) move get_key into the class
+3) Fix bug in writeChar caused column 6 of any character not to be updated
+4) add code to ensure values for cursor_row and cursor_col are kept within array bounds
+5) Inherit Nokia_3310_lcd class from Print and add a write function
+   This enables all normal print behaviour, including numbers
+
+Updated: 14th November by Andrew Lindsay
+1) Create new big font that is cleaner.
+
+Updated: 9th December 2009 by John Crouchley
+1) PORTB2 (Arduino digital 10) must be set to OUTPUT and HIGH whilst SPCR is being changed
+   Failure to do this can lead to intermittent SPI errors.
+   If there is another SPI device already using PORTB2 then it will naturally be high already
+   Warning - if you use this pin for anything else (other than another SPI device enable)
+   then you may have problems.
+
+Updated: 26th January 2010 by John Crouchley
+1) Initialisation values (contrast and temp coefficient) updated for later LCDs (got a black screen)
+   values taken from updated driver on Nuelectronics site. This still works with the earlier lcds.
+
+Updated: 2nd September 2010 by Andrew Lindsay based on changes supplied
+by jmccrohan to add extra characters to big_font
+
