@@ -12,33 +12,33 @@ int readDataRF()
    if (vw_get_message(buf, &buflen))
    {
       for (int i = 0; i < buflen; i++)
-      { 
+      {
          inByte = (char)buf[i];
          
          //--------------------------------------------------
          // On recieve of variables
          //--------------------------------------------------
-         if (inByte=='A') 
+         if (inByte=='a')
          {
             variableA = atoi(cArray);      //String to float
          }
          
-         if (inByte=='B') 
+         if (inByte=='e')
          {
             variableB = atoi(cArray);      //String to float
          }
          
-          if (inByte=='C') 
+          if (inByte=='k')
          {
             variableC = atoi(cArray);      //String to float
          }
          
-          if (inByte=='D') 
+          if (inByte=='m')
          {
             variableD = atoi(cArray);      //String to float
          }
          
-            if (inByte=='E') 
+            if (inByte=='u')
          {
             variableE = atoi(cArray);      //String to float
          }
@@ -49,7 +49,7 @@ int readDataRF()
          //--------------------------------------------------
          // if character A to Z : reset arrays
          //--------------------------------------------------
-         if (inByte>64 && inByte<91) 
+         if (inByte>64 && inByte<91)
          {
             ic=0;
             for(int i=0; i<10; i++) cArray[i] = 0;
@@ -59,7 +59,7 @@ int readDataRF()
          //--------------------------------------------------
          //If digit 0 to 9 .. or decimal point (46) or negative (45)
          //--------------------------------------------------
-         if ((inByte>47 && inByte<58) || inByte==46 || inByte==45 )   
+         if ((inByte>47 && inByte<58) || inByte==46 || inByte==45 )
          {
             //add to character array
             cArray[ic] = inByte; ic++;

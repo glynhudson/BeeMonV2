@@ -62,11 +62,11 @@ void loop()
 
     char str[4];
     dtostrf(A,0,1, str);
-    strcat(str,"a");
+    strcat(str,"C");
     lcd.writeString(0,0,str, MENU_NORMAL );
 
     dtostrf(B,0,1, str);
-    strcat(str,"e");
+    strcat(str,"C");
     lcd.writeString(0,9,str, MENU_NORMAL );
 
     dtostrf(C,0,1, str);
@@ -74,13 +74,13 @@ void loop()
     lcd.writeString(0,18,str, MENU_NORMAL );
 
     dtostrf(D,0,1, str);
-    strcat(str,"m");
+    strcat(str,"C");
     lcd.writeString(0,27,str, MENU_NORMAL );
 
 
 
     dtostrf(E,0,1, str);
-    strcat(str,"u");
+    strcat(str,"V");
     lcd.writeString(0,37,str, MENU_NORMAL );
   }
 
