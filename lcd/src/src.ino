@@ -25,11 +25,10 @@ void setup()
   Serial.begin(9600);
   Serial.println("BeeMonV2.5 lcd");
 
-    lcd.writeString(0,0,"Crown", MENU_NORMAL );
-    lcd.writeString(0,1.5,"Ambient", MENU_NORMAL );
-    lcd.writeString(0,2.0,"Super", MENU_NORMAL );
-    lcd.writeString(0,2.5,"Cluster", MENU_NORMAL );
-    lcd.writeString(0,3.0,"Battery", MENU_NORMAL );
+    lcd.writeString(0,0,"Bee Monitor V2", MENU_HIGHLIGHT );
+    lcd.writeString(0,3.5,"NO DATA", MENU_NORMAL );
+    lcd.writeString(0,4.5,"RECEIVED", MENU_NORMAL );
+    lcd.writeString(0,5.5,":-(", MENU_HIGHLIGHT );
 
 
 }
@@ -40,8 +39,10 @@ void loop()
 
 
 
-   if (readDataRF())
+ if (readDataRF())
+   
   {
+
     A=variableA/100.0;
     B=variableB/100.0;
     C=variableC/100.0;
@@ -53,37 +54,37 @@ void loop()
     Serial.print(C); Serial.print(" ");
     Serial.println(D); Serial.print(" ");
     Serial.print(E);
-
-    lcd.writeString(36,0,"^Cluster", MENU_NORMAL );
-    lcd.writeString(36,9,"Ambient", MENU_NORMAL );
-    lcd.writeString(36,18,"^Crown", MENU_NORMAL );
-    lcd.writeString(36,27,"Cluster", MENU_NORMAL );
-    lcd.writeString(35  ,37,"Battery", MENU_NORMAL );
+    
+    lcd.clear();
+    lcd.writeString(0,0,"Bee Monitor V2", MENU_HIGHLIGHT );
+    lcd.writeString(0,1.5,"Crown:", MENU_NORMAL );
+    lcd.writeString(0,2.5,"Ambient:", MENU_NORMAL );
+    lcd.writeString(0,3.5,"Super:", MENU_NORMAL );
+    lcd.writeString(0,4.0,"Cluster:", MENU_NORMAL );
+    lcd.writeString(0,5.0,"Battery:", MENU_NORMAL );
 
     char str[4];
     dtostrf(A,0,1, str);
     strcat(str,"C");
-    lcd.writeString(0,0,str, MENU_NORMAL );
+    lcd.writeString(48,1.5,str, MENU_NORMAL );
 
     dtostrf(B,0,1, str);
     strcat(str,"C");
-    lcd.writeString(0,9,str, MENU_NORMAL );
+    lcd.writeString(48,2.5,str, MENU_NORMAL );
 
     dtostrf(C,0,1, str);
-    strcat(str,"k");
-    lcd.writeString(0,18,str, MENU_NORMAL );
+    strcat(str,"C");
+    lcd.writeString(48,3.5,str, MENU_NORMAL );
 
     dtostrf(D,0,1, str);
     strcat(str,"C");
-    lcd.writeString(0,27,str, MENU_NORMAL );
+    lcd.writeString(48,4.0,str, MENU_NORMAL );
 
 
 
     dtostrf(E,0,1, str);
     strcat(str,"V");
-    lcd.writeString(0,37,str, MENU_NORMAL );
+    lcd.writeString(48,5.0,str, MENU_NORMAL );
   }
-
-
 
 }
