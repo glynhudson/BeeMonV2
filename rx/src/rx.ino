@@ -116,7 +116,7 @@ void setup()
 
     digitalWrite(LED_PIN, HIGH);
 //   Serial.println("Bee Monitor Rx V2.5 11Jul16");
-    Serial.println("11 99 99 99 99");
+    Serial.println("11 9999 9999 9999 9999 9999");
     delay(1000);
     digitalWrite(LED_PIN, LOW);
    
