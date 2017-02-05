@@ -18,7 +18,7 @@ float a,e,k,m,u;
 char cArray[100];
 int ic=0;
 
-const int nodeID=11;
+const int nodeID=27;
 const int LED_PIN=13;
 
 
@@ -110,15 +110,21 @@ void setup()
   //---------------------------------------------------------
   vw_set_ptt_inverted(true);          // Required for DR3100
   vw_setup(2000);	              	// Bits per sec
-  vw_set_rx_pin(7);                   //Dig 6
+  vw_set_rx_pin(7);                   //Dig 7
   vw_rx_start();                      // Start
   //---------------------------------------------------------
 
+//   Serial.println('Bee Monitor Rx V2.5 11Jul16');
     digitalWrite(LED_PIN, HIGH);
-//   Serial.println("Bee Monitor Rx V2.5 11Jul16");
-    Serial.println("11 1111 1111 1111 1111 1111");
-    delay(1000);
+    delay(500);
     digitalWrite(LED_PIN, LOW);
+    Serial.print(nodeID);    Serial.print(' ');
+    Serial.print('123'); Serial.print(' ');
+    Serial.print('124'); Serial.print(' ');
+    Serial.print('125'); Serial.print(' ');
+    Serial.print('126'); Serial.print(' ');
+    Serial.print('127');
+    Serial.print("\r\n");
    
 }
 
@@ -134,17 +140,18 @@ if (readDataRF())
     C=variableC/100.0;
     D=variableD/100.0;
     E=variableE/100.0;*/
-
+    delay(300);
+    digitalWrite(LED_PIN,LOW);
     //write data to serial in formatt OEM_gateway python script can understand nodeID Val1 Val2 etc.
-    Serial.print(nodeID);    Serial.print(" ");
-    Serial.print(variableA); Serial.print(" ");
-    Serial.print(variableB); Serial.print(" ");
-    Serial.print(variableC); Serial.print(" ");
-    Serial.print(variableD); Serial.print(" ");
-    Serial.println(variableE);
+    Serial.print(nodeID);    Serial.print(' ');
+    Serial.print(variableA); Serial.print(' ');
+    Serial.print(variableB); Serial.print(' ');
+    Serial.print(variableC); Serial.print(' ');
+    Serial.print(variableD); Serial.print(' ');
+    Serial.print(variableE);
+    Serial.print("\r\n");
 
-  delay(2000);
-  digitalWrite(LED_PIN,LOW);
+  delay(500);
   } // end if RF
 
 }
