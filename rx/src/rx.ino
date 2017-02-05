@@ -11,8 +11,15 @@ GNU GPL V3
 //RF module: http://openenergymonitor.org/emon/buildingblocks/simple-rf-link
 --------------------------------------------------------------*/
 #include <VirtualWire.h> // library for RF RX/TX
+#include <stdarg.h>
 
-int variableA, variableB, variableC, variableD, variableE;
+// int variableA, variableB, variableC, variableD, variableE;
+
+int variableA = 113;
+int variableB = 114;
+int variableC = 115;
+int variableD = 116;
+int variableE = 117;
 float a,e,k,m,u;
 
 char cArray[100];
@@ -98,7 +105,15 @@ int readDataRF()
 }
 
 
-
+// printf emulator http://playground.arduino.cc/Main/Printf
+void p(char *fmt, ... ){
+        char buf[128]; // resulting string limited to 128 chars
+        va_list args;
+        va_start (args, fmt );
+        vsnprintf(buf, 128, fmt, args);
+        va_end (args);
+        Serial.print(buf);
+}
 
 void setup()
 {
@@ -118,13 +133,15 @@ void setup()
     digitalWrite(LED_PIN, HIGH);
     delay(500);
     digitalWrite(LED_PIN, LOW);
-    Serial.print(nodeID);    Serial.print(' ');
-    Serial.print('123'); Serial.print(' ');
-    Serial.print('124'); Serial.print(' ');
-    Serial.print('125'); Serial.print(' ');
-    Serial.print('126'); Serial.print(' ');
-    Serial.print('127');
-    Serial.print("\r\n");
+    // Serial.print(nodeID);    Serial.print(' ');
+    // Serial.print('123'); Serial.print(' ');
+    // Serial.print('124'); Serial.print(' ');
+    // Serial.print('125'); Serial.print(' ');
+    // Serial.print('126'); Serial.print(' ');
+    // Serial.print('127');
+    // Serial.print("\r\n");
+    p("%d %d %d %d %d %d\r\n", nodeID, variableA, variableB, variableC, variableD, variableE);
+
    
 }
 
@@ -135,23 +152,26 @@ void loop()
 if (readDataRF())
   {
     digitalWrite(LED_PIN,HIGH);
+    delay(300);
+    digitalWrite(LED_PIN,LOW);
+    
     /*A=variableA/100.0;
     B=variableB/100.0;
     C=variableC/100.0;
     D=variableD/100.0;
     E=variableE/100.0;*/
-    delay(300);
-    digitalWrite(LED_PIN,LOW);
     //write data to serial in formatt OEM_gateway python script can understand nodeID Val1 Val2 etc.
-    Serial.print(nodeID);    Serial.print(' ');
-    Serial.print(variableA); Serial.print(' ');
-    Serial.print(variableB); Serial.print(' ');
-    Serial.print(variableC); Serial.print(' ');
-    Serial.print(variableD); Serial.print(' ');
-    Serial.print(variableE);
-    Serial.print("\r\n");
+    // Serial.print(nodeID);    Serial.print(' ');
+    // Serial.print(variableA); Serial.print(' ');
+    // Serial.print(variableB); Serial.print(' ');
+    // Serial.print(variableC); Serial.print(' ');
+    // Serial.print(variableD); Serial.print(' ');
+    // Serial.print(variableE);
+    // Serial.print("\r\n");
 
-  delay(500);
+    p("%d %d %d %d %d %d\r\n", nodeID, variableA, variableB, variableC, variableD, variableE);
+
+    delay(500);
   } // end if RF
 
 }
